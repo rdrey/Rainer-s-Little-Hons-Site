@@ -19,4 +19,4 @@ I enjoyed all of them, and might one day write up detailed descriptions for each
 
 I created my own thesis topic in 2010 and found [James Gain](~jgain) to supervise it and [Lawrence](~lwebley) and [Rizmari](~rversfeld) as great team mates.
 
-The result can be found on [project](~lwebley). A quick outline can be found on [thesis](thesis.html).
+The result can be found on [project](~lwebley/project). A quick outline can be found on [thesis](thesis.html).

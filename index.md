@@ -3,7 +3,7 @@ Welcome!
 
 You found me, which is peculiar. I'm assuming that you're not here looking for pretty websites, since this site is clearly not it. Maybe you're looking to recruit a code monkey? Whatever it is, this is how you can [reach me](contact.html).
 
-I could send you straight to my team's [project](~lwebley) website, or I could tell you a little about [myself](aboutme.html). I also wrote a tiny page about making this [website](thissite.html).
+I could send you straight to my team's [project](~lwebley/project) website, or I could tell you a little about [myself](aboutme.html). I also wrote a tiny page about making this [website](thissite.html).
 
 My [thesis](thesis.html) page describes my component of the project. It will be mirrored on the project site.
 

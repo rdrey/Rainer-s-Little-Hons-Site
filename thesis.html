@@ -1,0 +1,151 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>Rainer's Little Hons Page</title>
+  <meta name="description" content="">
+  <meta name="author" content="Rainer Dreyer">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <!-- CSS: implied media=all -->
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
+       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <nav class="row scroll-y left" >
+      <p class="fileroot">▼ FILES </p>
+      <!-- <p class="current">index.html</p> -->
+      <p><a href="index.html">index.html</a></p>
+      <p><a href="aboutme.html">aboutme.html</a></p>
+      <p><a href="myhonours.html">myhonours.html</a></p>
+      <p class="current"><a href="thesis.html">thesis.html</a></p>
+      <p><a href="thissite.html">thissite.html</a></p>
+      <p><a href="contact.html">contact.html</a></p>
+      <p><a href="http://people.cs.uct.ac.za/~lwebley/">project.link</a></p>
+      <p class="fileroot">▼ STATIC </p>
+      <p><a href="CV_Rainer_Dreyer.pdf">CV.pdf</a></p>
+      <p><a href="Rainer_Dreyer_Thesis.pdf">Thesis.pdf</a></p>
+    </nav>
+
+    <header class="row">
+      <div id="tab">thesis.html</div>
+    </header>
+
+    <div id="main" role="main" class="row scroll-y right col" >
+      
+<pre>
+<span class="Title">Spatial Data Provider</span>
+<span class="Title">=====================</span>
+
+The Spatial (Data) Provider component provides the platform (the game server specifically) with spatial data transformed to game objects.
+
+<span class="Title">##Introduction &amp; Motivation</span>
+
+All existing Location-Based Mobile Games (LBMGs) make use of simple spatial data, i.e. points only. Complex spatial data, such as lines for roads and areas for buildings and fields, has great unexplored gameplay potential.
+
+<span class="Special">![</span><span class="Underlined">OpenStreetMap data</span><span class="Special">](</span><span class="Constant">images/josm.png</span><span class="Special">)</span>
+<img src="images/josm.png" alt="OpenStreetMap data"/>
+
+This component explored the feasibility of providing complex real world data to a LBMG.
+
+<span class="Title">## Design</span>
+
+The Spatial (Data) Provider component provides the platform (the game server specifically) with spatial data transformed to game objects.
+
+<span class="Identifier">1. It parses OpenStreetMap XML data (OSM XML) for the features selected by the</span>
+<span class="Identifier">   game designer</span>
+
+<span class="Identifier">2. It converts these spatial features to game objects</span>
+
+<span class="Identifier">3. It saves all game objects into a spatially-enabled database (PostgreSQL)</span>
+
+<span class="Identifier">4. It allows the game designer to query for specific types of game objects</span>
+<span class="Identifier">   around a certain location or within an area.</span>
+
+The first three steps can are illustrated by the following diagram:
+
+<span class="Special">![</span><span class="Underlined">Steps 1 - 3</span><span class="Special">](</span><span class="Constant">images/mapping.png</span><span class="Special">)</span>
+<img src="images/mapping.png" alt="Steps 1 - 3"/>
+
+The usage of this component is very easy. It provides a simple 2-method API to perform the first three steps by <span class="Constant">`register()`</span>ing mappings and calling the <span class="Constant">`initFromFile()`</span> method on an OSM XML file. The last step is performed by importing this component on the game server and simply calling its <span class="Constant">`provide()`</span> method with the correct arguments.
+
+The complete API for this component is contained in the SpatialProvider class:
+
+<span class="Special">![</span><span class="Underlined">SpatialProvider API</span><span class="Special">](</span><span class="Constant">images/spclass2.png</span><span class="Special">)</span>
+<img src="images/spclass2.png" alt="SpatialProvider API"/>
+
+<span class="Title">##Results</span>
+
+We managed to provide over 80 game objects around Upper, Middle and Lower campus to game clients in less than 150 milliseconds per request.
+
+The following diagram shows the game objects created by this component on campus, overlaid by four players moving around and interacting with these objects for an hour of game play:
+
+<span class="Special">![</span><span class="Underlined">Players moving around campus</span><span class="Special">](</span><span class="Constant">images/travelled.png</span><span class="Special">)</span>
+<img src="images/travelled.png" alt="Players moving around campus"/>
+
+We were quite satisfied with the final result. Using the component from the game server proved to be very easy and as illustrated by the images above the game objects were well utilised by the players.
+</pre>
+
+    </div> <!--! end of #main -->
+  
+    <footer class="row">
+      <div id="copyrightnotice">
+      © Rainer Dreyer & UCT 2011, using <a href="http://h5bp.com"><img src="img/HTML5_Logo.svg" alt="HTML5 Logo"/> boilerplate.</a>
+      </div>
+    </footer>
+  </div> <!--! end of #container -->
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <!-- end scripts-->
+
+	
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <!-- <script>
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>-->
+
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
